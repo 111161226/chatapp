@@ -1,0 +1,21 @@
+<form class="form-signin" role="form" action="/user/new" method="post">
+  <h2 class="form-signin-heading">
+    <i class="fa fa-comments-o">
+      ChitChat
+    </i>
+  </h2>
+  <div class="lead">新規登録</div>
+  {{if .Error}}
+  <p><font color="#FF0000">{{ .Error }}</font><p></p>
+  {{end}}
+  <label>ユーザー名</label>
+  <input id="name" type="text" name="username" class="form-control" placeholder="お名前" required autofocus value="{{.Username}}">
+  <br>
+  <label>パスワード</label>
+  <input type="password" name="password" class="form-control" placeholder="パスワード" required value="{{.Password}}">
+  <br>
+  <label>パスワード(確認)</label>
+  <input type="password" name="pass_con" class="form-control" placeholder="パスワード確認用" required value="{{.Pass_con}}">
+  <br>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">登録</button>
+</form>
